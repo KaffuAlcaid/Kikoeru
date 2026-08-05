@@ -1,0 +1,61 @@
+{
+  "name": "kikoeru-web",
+  "private": true,
+  "description": "A self-hosted web media player for listening to your DLsite voice works.",
+  "homepage": "https://github.com/ValoHalo/Kikoeru",
+  "productName": "Kikoeru",
+  "cordovaId": "org.cordova.quasar.kikoeru",
+  "capacitorId": "",
+  "author": "Watanuki-Kimihiro",
+  "contributors": [
+    "yodhcn",
+    "umonaca <mw2010a@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValoHalo/Kikoeru.git"
+  },
+  "license": "GPL-3.0-only",
+  "keywords": [
+    "kikoeru"
+  ],
+  "scripts": {
+    "build": "quasar build -m pwa",
+    "check": "node scripts/check-source-syntax.js",
+    "lint": "eslint .",
+    "test": "npm run check"
+  },
+  "dependencies": {
+    "@quasar/extras": "2.0.2",
+    "axios": "1.19.0",
+    "lrc-file-parser": "1.0.7",
+    "plyr": "3.8.4",
+    "quasar": "2.23.5",
+    "register-service-worker": "1.7.2",
+    "socket.io-client": "2.5.0",
+    "vue": "3.5.40",
+    "vue-router": "4.6.4",
+    "vuedraggable": "4.1.0",
+    "vuex": "4.1.0"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "2.6.2",
+    "autoprefixer": "10.5.4",
+    "eslint": "7.32.0",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-vue": "9.33.0",
+    "workbox-build": "7.4.1"
+  },
+  "engines": {
+    "node": "^24.0.0",
+    "npm": ">= 11.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead"
+  ],
+  "eslintIgnore": [
+    "dist/*",
+    "src/router/index.js"
+  ]
+}

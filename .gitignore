@@ -1,0 +1,12 @@
+config/
+covers/
+sqlite/
+.runtime/
+.build/
+node_modules/
+.tooling/
+web/dist/
+web/.quasar/
+server/src/public/
+kikoeru-win-x64-*.zip
+*.log

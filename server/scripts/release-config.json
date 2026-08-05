@@ -1,0 +1,13 @@
+{
+  "frontendNode": {
+    "version": "24.14.1",
+    "directoryName": "node-v24.14.1-win-x64",
+    "archiveUrl": "https://nodejs.org/dist/v24.14.1/node-v24.14.1-win-x64.zip"
+  },
+  "ffmpeg": {
+    "archiveUrl": "https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2026-08-02-13-17/ffmpeg-n8.1.2-34-g9b6c8969e0-win64-lgpl-8.1.zip",
+    "archiveFileName": "ffmpeg-n8.1.2-34-g9b6c8969e0-win64-lgpl-8.1.zip",
+    "archiveRoot": "ffmpeg-n8.1.2-34-g9b6c8969e0-win64-lgpl-8.1",
+    "archiveSha256": "1c17a2af80ca4f85e3e72a1137eb4645f8a88c2e2d754339e270b1f234f8d49c"
+  }
+}
