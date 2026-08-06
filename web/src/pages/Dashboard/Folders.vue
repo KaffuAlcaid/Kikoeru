@@ -1,5 +1,5 @@
 <template>
-  <q-page class="admin-page admin-page--with-fixed-actions">
+  <q-page class="admin-page" :class="{ 'admin-page--with-fixed-actions': hasUnsavedChanges || loading }">
     <q-card class="q-ma-md">
       <q-form @submit="onSubmitRootFolder">
         <q-toolbar>
@@ -67,7 +67,7 @@
         <q-input v-else outlined dense required v-model="config.coverFolderDir" class="q-pa-sm" />
       </q-card>
 
-      <div class="admin-page-actions row justify-end">
+      <div v-if="hasUnsavedChanges || loading" class="admin-page-actions row justify-end">
         <q-btn :loading="loading" label="保存" icon="save" type="submit" color="primary" />
       </div>
     </q-form>
@@ -87,6 +87,7 @@ export default {
       config: {
         rootFolders: []
       },
+      savedConfigSnapshot: '',
       rootFolder: {
         name: '',
         path: ''
@@ -95,11 +96,18 @@ export default {
     }
   },
 
+  computed: {
+    hasUnsavedChanges () {
+      return this.savedConfigSnapshot !== '' && JSON.stringify(this.config) !== this.savedConfigSnapshot
+    }
+  },
+
   methods: {
     requestConfig () {
       this.$axios.get('/api/config/admin')
         .then((response) => {
           this.config = response.data.config
+          this.savedConfigSnapshot = JSON.stringify(this.config)
           this.rootFolder.path = response.data.config.voiceWorkDefaultPath
         })
         .catch((error) => {
@@ -120,6 +128,7 @@ export default {
         config: this.config
       })
         .then((response) => {
+          this.savedConfigSnapshot = JSON.stringify(this.config)
           this.showSuccNotif(response.data.message)
           this.loading = false
         })
