@@ -105,10 +105,10 @@ kikoeru-win-x64-<6 位 commit ID>.zip
 脚本在 `.build/` 中下载并校验固定的 Node.js Linux x64 与 FFmpeg LGPL 归档，创建隔离的前后端工作副本，安装锁定依赖，运行 server 测试和语法检查，构建 PWA，然后生成：
 
 ```text
-kikoeru-linux-x64-<版本号>.tar.gz
+kikoeru-linux-x64-<6 位 commit ID>.tar.gz
 ```
 
-版本号读取自 `server/package.json`。便携包包含 Node.js 24、生产依赖、前端文件、FFmpeg、启动脚本和许可证；用户数据默认写入解压目录下的 `data/`。
+文件名中的 commit ID 取自当前 HEAD；产品版本读取自 `server/package.json`。便携包包含 Node.js 24、生产依赖、前端文件、FFmpeg、启动脚本和许可证；用户数据默认写入解压目录下的 `data/`。
 
 ## Podman / Docker 镜像
 

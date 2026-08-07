@@ -72,7 +72,8 @@ done
 
 product_version="$(node -p "require('$source_server_root/package.json').version")"
 [[ "$product_version" =~ ^[0-9A-Za-z._-]+$ ]] || fail "Invalid product version: $product_version"
-commit_id="$(git -C "$repository_root" rev-parse --short=12 HEAD)"
+commit_id="$(git -C "$repository_root" rev-parse HEAD)"
+commit_id="${commit_id:0:6}"
 
 node_archive_url="$(config_value linuxNode.archiveUrl)"
 node_archive_name="$(config_value linuxNode.archiveFileName)"
@@ -127,7 +128,7 @@ run_in "$server_work_root" npm prune --omit=dev --no-audit --no-fund
 
 cp -a "$web_work_root/dist/pwa" "$server_work_root/src/public"
 
-stage_name="kikoeru-linux-x64-$product_version"
+stage_name="kikoeru-linux-x64-$commit_id"
 stage_root="$release_root/$stage_name"
 reset_directory "$release_root"
 mkdir -p "$stage_root/server" "$stage_root/node" "$stage_root/ffmpeg" "$stage_root/data"

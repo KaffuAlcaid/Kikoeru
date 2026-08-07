@@ -61,7 +61,7 @@ npm run build
 ./build-linux-release.sh
 ```
 
-产物为仓库根目录下的 `kikoeru-linux-x64-<版本号>.tar.gz`。解压后运行 `start-kikoeru.sh`，用户数据默认保存在同目录的 `data/`。
+产物为仓库根目录下的 `kikoeru-linux-x64-<6 位 commit ID>.tar.gz`。解压后运行 `start-kikoeru.sh`，用户数据默认保存在同目录的 `data/`。
 
 Podman 和 Docker 使用同一个 `Dockerfile`：
 
